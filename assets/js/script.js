@@ -1,6 +1,6 @@
 
 // creating list in the task to do section
-var buttonEl = document.querySelector("#save-task");
+// var buttonEl = document.querySelector("#save-task");
 var tasksToDoEl = document.querySelector("#task-to-do");
 
 // adding event listener to the button
@@ -27,17 +27,31 @@ note that the code block above, that is starting from the
   so we will comment out the above and re-write it as 
   follows
 */
-    var createTaskHandler = function() {
+    /* var createTaskHandler = function() {
       var listItemEl = document.createElement("li");
       listItemEl.className = "task-item";
       listItemEl.textContent = "This is a new task.";
       tasksToDoEl.appendChild(listItemEl);
     }
+    */
 
-  buttonEl.addEventListener("click", createTaskHandler);
+  // buttonEl.addEventListener("click", createTaskHandler);
+
+  var formEl = document.querySelector("#task-form");
+  
+  
   
 
-  
+  var createTaskHandler = function(event) {
+
+    event.preventDefault();
+
+    var listItemEl = document.createElement("li");
+    listItemEl.className = "task-item";
+    listItemEl.textContent = "formEl.value";
+    tasksToDoEl.appendChild(listItemEl);
+  };
+  formEl.addEventListener("submit", createTaskHandler);
   
 
   
