@@ -1,61 +1,34 @@
+var formEl = document.querySelector("#task-form");
+var tasksToDoEl = document.querySelector("#tasks-to-do");
 
-// creating list in the task to do section
-// var buttonEl = document.querySelector("#save-task");
-var tasksToDoEl = document.querySelector("#task-to-do");
+var taskFormHandler = function(event) {
+  event.preventDefault();
+  var taskNameInput = document.querySelector("input[name='task-name']").value;
+  var taskTypeInput = document.querySelector("select[name='task-type']").value;
 
-// adding event listener to the button
-/* 
-buttonEl.addEventListener("click", function() {
-  var listItemEl = document.createElement("li");
-  listItemEl.className = "task-item";
-  listItemEl.textContent = "This is a new task.";
-  tasksToDoEl.appendChild(listItemEl);
-  });
-*/
-
-/* 
-note that the code block above, that is starting from the
-  function (){.......} up to the append method, is mostly 
-  repeating to creat multiple elements, style and append 
-  them. Therefore we need to assign that part into 
-  something to minimize the repeation. so lets use
-  var createTaskHandler = function() {
-  var listItemEl = document.createElement("li");
-  listItemEl.className = "task-item";
-  listItemEl.textContent = "This is a new task.";
-  tasksToDoEl.appendChild(listItemEl)
-  so we will comment out the above and re-write it as 
-  follows
-*/
-    /* var createTaskHandler = function() {
-      var listItemEl = document.createElement("li");
-      listItemEl.className = "task-item";
-      listItemEl.textContent = "This is a new task.";
-      tasksToDoEl.appendChild(listItemEl);
-    }
-    */
-
-  // buttonEl.addEventListener("click", createTaskHandler);
-
-  var formEl = document.querySelector("#task-form");
-  
-  
-  
-
-  var createTaskHandler = function(event) {
-
-    event.preventDefault();
-
-    var listItemEl = document.createElement("li");
-    listItemEl.className = "task-item";
-    listItemEl.textContent = "formEl.value";
-    tasksToDoEl.appendChild(listItemEl);
+  // package up data as an object
+  var taskDataObj = {
+      name: taskNameInput,
+      type: taskTypeInput
   };
-  formEl.addEventListener("submit", createTaskHandler);
-  
 
-  
+  // send it as an argument to createTaskEl
+  createTaskEl(taskDataObj);
+};
 
+var createTaskEl = function (taskDataObj) {
+  // create list item
+  var listItemEl = document.createElement("li");
+  listItemEl.className = "task-item";
 
+  // create div to hold task info and add to list item
+  var taskInfoEl = document.createElement("div");
+  taskInfoEl.className = "task-info";
+  taskInfoEl.innerHTML = "<h3 class='task-name'>" + taskDataObj.name + "</h3><span class='task-type'>" + taskDataObj.type + "</span>";
+  listItemEl.appendChild(taskInfoEl);
 
+  // add entire list item to list
+  tasksToDoEl.appendChild(listItemEl);
+};
 
+formEl.addEventListener("submit", taskFormHandler);
