@@ -219,7 +219,6 @@ var deleteTask = function (taskId) {
 	tasks = updatedTaskArr;
 };
 
-
 // 7. TASK STATUS CHANGER  FUNCTION
 var taskStatusChangeHandler = function (event) {
 
@@ -263,10 +262,9 @@ var loadTasks = function () {
   for (var i = 0; i < savedTasks.length; i++) {
     createTaskEl(savedTasks[i]);
   };
-  
 };
 
-// event listeners
+// 9. event listeners
 
 pageContentEl.addEventListener("click", taskButtonHandler);
 
@@ -274,5 +272,9 @@ formEl.addEventListener("submit", taskFormHandler);
 
 pageContentEl.addEventListener("change", taskStatusChangeHandler);
 
-// call the data from the local storage for the first time
+// 10. call the data from the local storage for the first time
 loadTasks();
+
+
+
+

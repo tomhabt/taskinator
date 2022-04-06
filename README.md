@@ -7,7 +7,7 @@ Visit the Application Link: https://tomhabt.github.io/taskinator/
 
 This project is about building an online project tracker that uses the Kanban approach, which is common in agile development. Put simply, a Kanban board lets team members move discrete chunks of work between columns that communicate a status, such as To Do, In Progress, or Complete. The project is aligned with a principile of identifying document object and its relationship to HTML. It majorly uses a DOM API method to select and dynamically generate HTML elements and content. It majorly contains an event-driven function to enable to perform the DOM manupilation. At the end it also demonstartes the skills how persistently use local storage to keep tasks in a responding status page or list.
 
-The following screenshots of the application illustrates the different level of the project tracker small Javascript Front-end application. 
+**The following screenshots of the application illustrates the different level of the project tracker small Javascript Front-end application.** 
 
 ![Screenshot](https://user-images.githubusercontent.com/84083304/147853582-c5bd55c6-bea7-4629-9d18-6a4b8079feed.png)
 ![Screenshot](https://user-images.githubusercontent.com/84083304/147853585-2473bfb4-0e1a-481d-9580-b28f284e8ead.png)
@@ -29,11 +29,11 @@ The following screenshots of the application illustrates the different level of 
 
 ## Installation
 
-No installation required
+No installation is required
 
 ## Usage
 
-To use the app please view the following link: https://tomhabt.github.io/taskinator-redo/.  Make sure you clean up your local storage memory before preceeding.
+To use the app please view the following link: https://tomhabt.github.io/taskinator/.  Make sure you clean up your local storage memory before preceeding.
 
 ## License
     
@@ -51,4 +51,4 @@ This work is saved in the following repository
 
 For questions and inquiries contact me at:
 thomas.habtemariam@gmail.com
-Year 2021
+Year 2021/2022
